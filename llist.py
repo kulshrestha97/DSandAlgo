@@ -139,15 +139,6 @@ class LinkedList:
             
             temp = temp.next
             count+=1
-    def insert(self,data, prev):
-        '''
-        Inserts a node at a given position
-        '''
-        node = Node(data)
-        "Node Created"
-        node.next = prev.next
-        "Position assigned"
-        prev.next = node
       
     def instance(self,num):
         temp = self.head
