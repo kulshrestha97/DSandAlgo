@@ -220,10 +220,6 @@ class LinkedList:
             temp1 = temp1.next
         
 
-
-            
-            
-
 if __name__=="__main__":
     # TODO: First creates nodes then add lists 
     llist = LinkedList()
