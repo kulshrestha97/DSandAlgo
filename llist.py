@@ -1,4 +1,6 @@
 # This is a representation of LinkedList Data Structure
+
+__author__ = "Rajat Kulshreshtha"
 class Node:
     """
     This Class represents a single node of linked list
@@ -26,6 +28,9 @@ class LinkedList:
         return listprint
 
     def delete(self, key):
+        '''
+        Delete the node from the LinkedList based on occurances
+        '''
         temp = self.head
         '''
         If the node to delete is the first node in the list
@@ -46,6 +51,9 @@ class LinkedList:
 
     def reverse(self):
         '''
+        Reverses a LinkedList
+        '''
+        '''
         We have to keep the record of the previous node also, 
         Plus we have to keep the linked list's head at the previous, because
         after the function occurs, previous will point to the last node.
@@ -60,7 +68,9 @@ class LinkedList:
         self.head = prev # this is necessary for printing out the LinkedList in reverse order.
 
     def search(self,x):
-        
+        '''
+        Searches an element in the LinkedList
+        '''
         temp = self.head
         count = 0
         while(temp is not None):
@@ -72,6 +82,9 @@ class LinkedList:
             temp = temp.next
 
     def retrieve(self, index):
+        '''
+        Gives the data value of the node at a given index.
+        '''
         temp = self.head
         count=0
         while(temp!=None):
@@ -82,6 +95,9 @@ class LinkedList:
             count+=1
 
     def length(self):
+        '''
+        Returns the length of the LinkedList.    
+        '''
         temp = self.head
         count=0
         while(temp is not None):
@@ -90,6 +106,9 @@ class LinkedList:
         return count
 
     def swap(self,x,y):
+        '''
+        Swaps two nodes.
+        '''
         xprev = None
         xcurr = self.head
         while(xcurr!= None and xcurr.data !=x):
@@ -120,7 +139,16 @@ class LinkedList:
             
             temp = temp.next
             count+=1
-    
+    def insert(self,data, prev):
+        '''
+        Inserts a node at a given position
+        '''
+        node = Node(data)
+        "Node Created"
+        node.next = prev.next
+        "Position assigned"
+        prev.next = node
+      
     def instance(self,num):
         temp = self.head
         count = 0
@@ -168,6 +196,31 @@ class LinkedList:
                 print(temp.data)
             count+=1    
             temp = temp.next
+    
+    def push(self, data):
+        node = Node(data)
+        node.next = self.head
+        self.head = node
+
+    
+    def append(self, data):
+        temp = self.head
+        node = Node(data)
+        while(temp.next is not None):
+                      
+            print(temp.data)
+            temp = temp.next
+        
+        temp.next= node
+        node.next = None
+        temp1 = self.head
+        print("This is the second function")
+        while(temp1 is not None):
+            print(temp1.data)
+            temp1 = temp1.next
+        
+
+
             
             
 
@@ -181,27 +234,11 @@ if __name__=="__main__":
     fourth = Node("4")
     fifth = Node("5")
 
-
-    
-
     llist.head.next = second
     second.next = third
     third.next = fourth
     fourth.next = fifth
     fifth.next = None
-    
-    llist.printalt()
-    
-'''
-
-    Now next of second Node refers to third.  So all three
-    nodes are linked.
- 
-    llist.head        second              third
-         |                |                  |
-         |                |                  |
-    +----+------+     +----+------+     +----+------+
-    | 1  |  o-------->| 2  |  o-------->|  3 | null |
-    +----+------+     +----+------+     +----+------+
-
-'''
+      
+    llist.append(6)
+    # llist.printlist()
