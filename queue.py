@@ -1,5 +1,6 @@
 # This is a python representation of Queue
 # Assume front and rear as pointers, it will ease the understanding part
+__author__ = "Rajat Kulshreshtha"
 class Queue:
     def __init__(self,capacity):
         self.size = 0
