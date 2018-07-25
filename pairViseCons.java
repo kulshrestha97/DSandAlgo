@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class qselectivereverse {
+public class pairViseCons {
     public static boolean pairViseCons(Stack<Integer> s) {
         Queue<Integer> q = new LinkedList<>();
         while (!s.isEmpty()) {
